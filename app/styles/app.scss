@@ -40,15 +40,18 @@ body{
 .contact-item{
 
    overflow:hidden;
-   button{
+   .btn-danger{
       overflow:hidden;
       position: absolute;
       right: 0px;
       top:0;
       bottom: 0;
 
-      width: 0;
+      width: 1px;
+
       opacity: 0;
+
+      border: 0;
 
       transition: width .3s, opacity .3s;
 
@@ -67,9 +70,13 @@ body{
 
 .form-group {
   margin-bottom: 12px;
-
 }
 
+.btn-default:focus {
+    background-color: #fff;
+    border-color: #ccc;
+    outline: none;
+}
 
 ul{
    *{

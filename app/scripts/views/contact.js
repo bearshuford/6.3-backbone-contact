@@ -30,7 +30,7 @@ var ContactItemView = Backbone.View.extend({
    className: 'list-group-item contact-item',
 
    events: {
-      'click .btn-delete': 'addContact',
+      'click .btn-danger': 'deleteContact'
    },
 
    template: _.template($('#contact-stamp').html()),
@@ -39,7 +39,14 @@ var ContactItemView = Backbone.View.extend({
       var context = this.model.toJSON();
       this.$el.html(this.template(context));
       return this;
+   },
+
+   deleteContact: function(){
+      console.log('delete contact', this.model);
+      this.model.destroy();
+      this.$el.slideDown(function(){this.remove();});
    }
+
 
 });
 
@@ -60,7 +67,7 @@ var ContactFormView = Backbone.View.extend({
 
    render: function() {
       this.$el.html(this.template());
-      $('.form-group').hide();
+      this.$el.find('.form-group').hide();
       return this;
    },
 
