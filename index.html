@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>6 3 backbone contact</title>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+
+
+
+<div class="app container-fluid">
+
+   <div class="container-fluid">
+
+
+
+
+
+   </div>
+</div>
+
+<!-- <div class="list-group">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading">List group item heading</h4>
+    <p class="list-group-item-text">...</p>
+  </a>
+</div> -->
+
+   <script type="text/template" id="contact-stamp">
+
+
+      <h4 class="list-group-item-heading"><%= name  %></h4>
+
+      <% if (typeof(phone) !== "undefined") { %>
+      <div><%= phone %></div>
+      <% } %>
+
+      <% if (typeof(phone) !== "undefined") { %>
+      <a href="mailto:<%= email %>"><%= email %></a>
+      <% } %>
+
+      <% if (typeof(twitter) !== "undefined") { %>
+    <a href="https://twitter.com/<%= twitter %>"><%= twitter %></a>
+      <% } %>
+
+      <button id='delete-contact' class="btn-danger">
+         <i class="glyphicon glyphicon-trash"></i>
+      </button>
+
+   </script>
+
+
+
+
+
+   <script type="text/template" id="form-stamp">
+
+
+            <!-- name -->
+            <div class="form-group">
+             <div id="nameError" role="alert" class="sr-only"></div>
+             <label for="input-name" class="sr-only">name</label>
+             <div class="input-group">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                <input id="input-name" type="text" value="" placeholder="name" class="form-control"/>
+             </div>
+            </div>
+
+            <!-- email -->
+            <div class="form-group">
+             <div id="emailError" role="alert" class="sr-only"></div>
+             <label for="input-email" class="sr-only">email</label>
+             <div class="input-group">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+                <input id="input-email" type="email" value="" placeholder="email" class="form-control"/>
+             </div>
+            </div>
+
+            <!-- phone-->
+            <div class="form-group">
+             <div id="phoneError" role="alert" class="sr-only"></div>
+             <label for="input-phone" class="sr-only">phone</label>
+             <div class="input-group">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></div>
+                <input id="input-phone" type="tel" value="" placeholder="phone" class="form-control"/>
+             </div>
+            </div>
+            <button type="submit" id="btn-add" class="btn btn-block btn-default">Add Contact</button>
+
+
+
+
+   </script>
+
+
+
+
+
+
+
+
+
+
+   <script src="js/bundle.js"></script>
+
+  </body>
+</html>
